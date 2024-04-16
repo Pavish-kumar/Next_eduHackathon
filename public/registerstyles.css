@@ -1,0 +1,50 @@
+h1{
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.email{
+    margin-bottom: 2rem;
+}
+
+.password{
+    margin-bottom: 2rem;
+}
+
+.email label{
+    font-size: 2rem;
+}
+
+.email input{
+    width: 60%;
+    height: 40px;
+}
+
+.password label{
+    font-size: 2rem;
+}
+
+.password input{
+    width: 60%;
+    height: 40px;
+}
+
+.button{
+    width: 100px;
+}

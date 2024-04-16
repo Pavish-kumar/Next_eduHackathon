@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Edu</title>
+    <style>
+        *{
+            margin: 0;
+            font-family:Verdana, Geneva, Tahoma, sans-serif
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+             
+        }
+
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: hsl(0, 0%, 90%);
+            height: 60px;  
+        }
+        .logo img{
+            padding: 20px;
+        }
+
+        .user p{
+            padding: 20px;
+        }
+
+        .initial-section{
+            display: flex;
+            justify-content: center;
+           height: 50%;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .content{
+            display: flex;
+            justify-content: center;
+        }
+        
+        .card-container{
+            flex-wrap: wrap;
+            display: flex;
+            gap: 20px;
+        }
+
+        .card{
+            width: 300px;
+            height: 300px;
+            background-color: antiquewhite;
+
+        }
+        .card p{
+            padding: 20px;
+            font-size: 1rem;
+        }
+    </style>
+
+
+
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <div class="user">
+                <p class="userName">Username</p>
+            </div>
+        </nav>
+    </header>
+
+    <section class="initial-section"> 
+        <div class="container">
+            <label for="">Select Who You are now?</label>
+            <select name="" id="options">
+                <option value="Select">Select</option>
+                <option value="10th">10th</option>
+                <option value="12th">12th</option>
+                <option value="UG">UG</option>
+            </select>
+        </div>
+        <button id="go">Go</button>
+    </section>
+
+    <section class="content">
+        <div id="container">
+        </div>
+    </section>
+
+    <section class="12&ug">
+        <div id="container-2">
+
+        </div>
+    </section>
+
+
+    <script defer>
+
+        let diploma = "<div class='card'><img src='' alt='diploma'><p>Diplomo</p> </div>";
+        let twelth = "<div class='card'><img src='' alt='12th'><p>Twelth</p> </div>";
+        let engineering = "<div class='card'><img src='' alt='engineering'><p>Engineering</p> </div>";
+        let medical = "<div class='card'><img src='' alt='medical'><p>Medical</p> </div>";
+        let arts = "<div class='card'><img src='' alt='arts'><p>Arts & Science</p> </div>";
+        let management = "<div class='card'><img src='' alt='management'><p>Management</p> </div>";
+        let law = "<div class='card'><img src='' alt='law'><p>Law</p> </div>";
+        let architecture = "<div class='card'><img src='' alt='architecture'><p>Architecture</p> </div>";
+
+
+
+        console.log("script is running");
+
+
+        let select = document.getElementById("options");
+        let content_box = document.getElementById("container"); 
+        
+    
+        let go=document.getElementById("go");
+        
+        go.addEventListener("click", fun, false);
+        
+        function fun() {
+            console.log("fun");
+            let selectedOption = select.value;
+            
+            switch(selectedOption){
+                case "10th":
+                 fun_10th();
+                 break;
+                case "12th":
+                 fun_12th();
+                    break;
+                case "UG":
+                    fun_UG();
+                    break;
+                }
+            }
+            
+            function fun_10th(){
+                
+                content_box.innerHTML = `<div class='card-container'> ${diploma} ${twelth}</div>`;
+            }   
+
+            function fun_12th(){
+                content_box.innerHTML = `<h1>Bio Maths</h1> <div class='card-container'> ${engineering} ${medical} ${law} ${architecture} ${management}`;
+
+                content_box.innerHTML += `<h1>Cs Maths</h1> <div class='card-container'> ${engineering} ${law} ${architecture} ${management}`;
+                
+            }
+            
+            function fun_UG(){
+                content_box.innerHTML = "";
+            }
+                
+                
+                
+                
+     </script>
+</body>
+</html>
